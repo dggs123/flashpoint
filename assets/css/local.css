@@ -1,0 +1,131 @@
+@media (max-width: 992px) {
+    .girlentry { float: none !important; }
+
+
+    .profile-pic-img > input.img-circle { # on small screens, make pictures a bit smaller
+        width: 60% !important;
+    }
+}
+
+
+/*
+ * Profile image component, taken from http://bootsnipp.com/snippets/featured/profile-picture-with-badge
+ */
+.profile-pic-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* this shows up in the vote page */
+.profile-pic-img > input.img-circle {
+    border: 5px solid #51D2B7; /* default color - used for undefined themes */
+    width: 100%;
+    height: inherit;
+    box-shadow: 4px 4px 15px -4px #000;
+}
+
+/* this shows up in the top page */
+.profile-pic-img > img.img-circle {
+    width: 25%;
+    height: inherit;
+    box-shadow: 4px 4px 15px -4px #000;
+}
+
+.profile-pic-img-gold > img.img-circle {
+    border: 10px solid #FFD700;
+    width: 50%;
+    height: inherit;
+}
+
+.profile-pic-img-silver > img.img-circle {
+    border: 10px solid #C0C0C0;
+    width: 40%;
+    height: inherit;
+}
+
+.profile-pic-img-bronze > img.img-circle {
+    border: 10px solid #CD7F32;
+    width: 30%;
+    height: inherit;
+}
+
+
+@media (max-width: 992px) {
+    .profile-pic-img > img.img-circle {
+        width: 60%;
+        height: inherit;
+    }
+
+    .profile-pic-img-gold > img.img-circle {
+        width: 95%;
+        height: inherit;
+    }
+
+    .profile-pic-img-silver > img.img-circle {
+        width: 80%;
+        height: inherit;
+    }
+
+    .profile-pic-img-bronze > img.img-circle {
+        width: 70%;
+        height: inherit;
+    }
+}
+
+/* ^done */
+
+.profile-pic-img-Cyborg > input.img-circle {
+    border: 5px solid #2a9fd6;
+}
+
+.profile-pic-img-Paper > input.img-circle {
+    border: 5px solid #2196f3;
+}
+
+.profile-pic-img-Sandstone > input.img-circle {
+    border: 5px solid #325d88;
+}
+
+.profile-pic-img-Simplex > input.img-circle {
+    border: 5px solid #d9230f;
+}
+
+.profile-pic-img-Standard > input.img-circle {
+    border: 5px solid #337ab7;
+}
+
+
+/*
+ * Grade badge component
+ */
+.grade-container {
+    text-align: center;
+}
+
+.grade-label {
+    background-color: rgb(81, 210, 183); /* default color */
+    padding: 5px 14px 20px 14px;
+    border-radius: 20px;
+    font-size: 24px;
+}
+
+.grade-label-Cyborg {
+    background-color: #2a9fd6;
+}
+
+.grade-label-Paper {
+    background-color: #2196f3;
+}
+
+.grade-label-Sandstone {
+    background-color: #325d88;
+}
+
+.grade-label-Simplex {
+    background-color: #d9230f;
+}
+
+.grade-label-Standard {
+    background-color: #337ab7;
+}
+

@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}macefash{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="screen">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'css/search.css' %}">
+        <link rel="stylesheet" href="{% static 'css/local.css' %}">
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <style>
+            body
+            {
+            background-image:url("assets/img/bg/grey_@2X.png");
+            }
+            h3
+            {
+            text-align:center;
+            color:#00cca3;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- facebook sdk, not sure it's necessary -->
+
+        <!--<nav class="navbar navbar-default" style="background-color:transparent;border-bottom:none;">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
+    <!--</div>-->
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> TOP RANKERS</a></li>-->
+      <!--</ul>-->
+      <!--</div>-->
+        <!--</nav>-->
+            <nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent;border-bottom:none;" strole="navigation">
+
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+    			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Search</span>
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+                <a class="navbar-brand" href="{% url 'homepage:home' %}">FACEMASH-CUFE</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				</ul>
+
+    			<ul class="nav navbar-nav navbar-right">
+					<li><a href="{% url 'homepage:top' %}">TOP RANKERS &nbsp &nbsp &nbsp</a></li>
+				</ul>
+
+                <form class="navbar-form navbar-right" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button type="reset" class="btn btn-default">
+								<span class="glyphicon glyphicon-remove">
+									<span class="sr-only">Close</span>
+								</span>
+							</button>
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search">
+									<span class="sr-only">Search</span>
+								</span>
+							</button>
+						</span>
+					</div>
+				</form>
+			</div><!-- /.navbar-collapse -->
+
+	</nav>
+
+
+            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+            <script src="{% static 'js/new.js' %}"></script>
+
+            {% block content %}
+            {% endblock %}
+
+            <br>
+            <br>
+
+
+            <footer class="container-fluid text-center">
+
+
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="border-top: 1px solid;">
+               <p>developed late at night by a team of <i>highly</i> trained<strong><a href="https://www.youtube.com/watch?v=6Jz0JcQYtqo" target="_blank">tarsiers</a></strong><br>
+
+                </p>
+                </div>
+            </footer>
+      </body>
+</html>

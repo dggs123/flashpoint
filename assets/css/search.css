@@ -1,0 +1,24 @@
+#Cyborg-search {
+    position: relative;
+    top: 6px;
+}
+
+#Paper-search  {
+    position: relative;
+    top: 5px;
+}
+
+#Sandstone-search  {
+    position: relative;
+    top: 8px;
+}
+
+#Simplex-search  {
+    position: relative;
+    top: 6px;
+}
+
+#Standard-search  {
+    position: relative;
+    top: 4px;
+}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+<h3>CHOOSE ONE</h3>
+<!-- PICTURES ROW -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5">
+            <div class="profile-pic-container">
+                <div class="grade-container">
+                    <span class="label grade-label grade-label-blue">{{ choices1.nlikes }}<small> likes</small></span>
+                </div>
+                <form method="POST" class="profile-pic-img profile-pic-img-blue">
+                    {% csrf_token %}
+                    <input type="hidden" name="winner" value="{{ choices1.id }}"></input>
+                    <input type="hidden" name="loser" value="{{ choices2.id }}"></input>
+                    <input type="image" action="submit" class="img-circle" src="{{ choices1.image.url }}">
+                    <figcaption class="figure-caption text-xs-right">by {% if choices1.Name %}{{ choices1.Name }}{% endif %}</figcaption>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="profile-pic-container">
+                <div class="grade-container">
+                    <span class="label grade-label grade-label-blue">{{ choices2.nlikes }}<small> likes</small></span>
+                </div>
+                <form method="POST" class="profile-pic-img profile-pic-img-blue">
+                    {% csrf_token %}
+                    <input type="hidden" name="winner" value="{{ choices2.id }}"></input>
+                    <input type="hidden" name="loser" value="{{ choices1.id }}"></input>
+                    <input type="image" action="submit" class="img-circle" src="{{ choices2.image.url }}">
+                    <figcaption class="figure-caption text-xs-right">by {% if choices2.Name %}{{ choices2.Name }}{% endif %}</figcaption>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
