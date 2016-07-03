@@ -17,8 +17,11 @@ def upload_location(instance, filename):
     """
     return "%s/%s" %(instance.Name, filename)
 class photo(models.Model):
-    Name = models.CharField(max_length=120)
-    email = models.EmailField(null=True)
+#    catagories=(
+#        ('n', 'n'),
+#        ('c', 'c'),
+#    )
+    Name = models.CharField(max_length=120,null=True)
     image = models.ImageField(upload_to=upload_location,
                               null=True,
                               blank=True,
@@ -26,19 +29,15 @@ class photo(models.Model):
                             height_field = "height_field")
     height_field = models.IntegerField(default=1000)
     width_field = models.IntegerField(default=1000)
-    Discription = models.TextField(null=True)
     nlikes=models.IntegerField(null=True,default=0)
-    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    timestamp = models.DateTimeField(null=True,auto_now=False, auto_now_add=True)
+#    tag=models.CharField(max_length=100,choices=catagories,null=True)
 
     def __unicode__(self):
         return self.Name
 
     def __str__(self):
         return self.Name
-class rank_db(models.Model):
-    id_a = models.IntegerField()
-    id_b = models.IntegerField()
-    score = models.IntegerField()
 class total_likes(models.Model):
-    Name = models.CharField(max_length=120)
+    Name = models.CharField(null=True,max_length=120)
     t_l=models.IntegerField(null=True,default=0)

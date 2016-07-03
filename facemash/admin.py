@@ -1,13 +1,12 @@
 from django.contrib import admin
-from .models import photo,total_likes
+from .models import photo
 # Register your models here.
 class photoAdmin(admin.ModelAdmin):
+    list_display = ('Name', 'timestamp')
     fieldsets = [
         ('Personal Details',{'fields': ['Name']}),
-        (None, {'fields': ['email']}),
         ('Upload Image', {'fields': ['image']}),
-        ('DISCRIPTION/OPTIONAL', {'fields': ['Discription']}),
-
+        ('likes' , {'fields':['nlikes']}),
     ]
+    # list_filter = ('Name',)
 admin.site.register(photo,photoAdmin)
-admin.site.register(total_likes)

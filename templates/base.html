@@ -1,107 +1,136 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}macefash{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="screen">
-        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
-        <link rel="stylesheet" href="{% static 'css/search.css' %}">
-        <link rel="stylesheet" href="{% static 'css/local.css' %}">
-        <link rel="stylesheet" href="{% static 'css/new.css' %}">
-        <style>
-            body
-            {
-            background-image:url("assets/img/bg/grey_@2X.png");
-            }
-            h3
-            {
-            text-align:center;
-            color:#00cca3;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- facebook sdk, not sure it's necessary -->
+<html lang="en">
 
-        <!--<nav class="navbar navbar-default" style="background-color:transparent;border-bottom:none;">-->
-  <!--<div class="container-fluid">-->
-    <!--<div class="navbar-header">-->
-      <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
-    <!--</div>-->
-      <!--<ul class="nav navbar-nav navbar-right">-->
-        <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> TOP RANKERS</a></li>-->
-      <!--</ul>-->
-      <!--</div>-->
-        <!--</nav>-->
-            <nav class="navbar navbar-default navbar-fixed-top" style="background-color:transparent;border-bottom:none;" strole="navigation">
+<head>
 
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-    			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Search</span>
-					<span class="glyphicon glyphicon-search"></span>
-				</button>
-                <a class="navbar-brand" href="{% url 'homepage:home' %}">FACEMASH-CUFE</a>
-			</div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-				</ul>
+    <title>FLASH POINT</title>
 
-    			<ul class="nav navbar-nav navbar-right">
-					<li><a href="{% url 'homepage:top' %}">TOP RANKERS &nbsp &nbsp &nbsp</a></li>
-				</ul>
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-                <form class="navbar-form navbar-right" role="search">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search for...">
-						<span class="input-group-btn">
-							<button type="reset" class="btn btn-default">
-								<span class="glyphicon glyphicon-remove">
-									<span class="sr-only">Close</span>
-								</span>
-							</button>
-							<button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-search">
-									<span class="sr-only">Search</span>
-								</span>
-							</button>
-						</span>
-					</div>
-				</form>
-			</div><!-- /.navbar-collapse -->
+    <!-- Theme CSS -->
+    <link href="{% static 'css/freelancer.min.css'%}" rel="stylesheet">
 
-	</nav>
+    <!-- Custom Fonts -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <script src="https://use.fontawesome.com/aaf52144b1.js"></script>
+
+    <![endif]-->
+    <style>   
+        a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+        body
+        {
+            background-image: url('/assets/img/bg/grey_@2X.png')
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function refresh()
+        {
+            document.getElementById("text").value=0;
+            document.getElementById("text2").value=0;
+        }
+        var a = 1;
+        function increase(){
 
 
-            <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-            <script src="{% static 'js/new.js' %}"></script>
+            document.getElementById("text").value=a;
+            a=a+1;
+
+        }
+
+        var b = 1;
+        function increase2(){
+
+
+            document.getElementById("text2").value=b;
+            b=b+1;
+
+        }
+    </script>
+</head>
+
+<body id="page-top" class="index" onload="refresh()">
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#page-top"><img src="{% static 'img/FP.png' %}" style="margin-top:-20px;"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                    <a href="{% url 'homepage:home' %}">Home</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="{% url 'homepage:top' %}">Top Ranker</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+    
 
             {% block content %}
             {% endblock %}
+<script src="https://use.fontawesome.com/aaf52144b1.js"></script>
 
-            <br>
-            <br>
+<!-- jQuery -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
 
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
-            <footer class="container-fluid text-center">
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+<!-- Contact Form JavaScript -->
+<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+<script src="{% static 'js/contact_me.js' %}"></script>
 
-            <div class="col-md-3"></div>
-            <div class="col-md-6" style="border-top: 1px solid;">
-               <p>developed late at night by a team of <i>highly</i> trained<strong><a href="https://www.youtube.com/watch?v=6Jz0JcQYtqo" target="_blank">tarsiers</a></strong><br>
+<!-- Theme JavaScript -->
+<script src="{% static 'js/freelancer.min.js' %}"></script>
+    
+<!--dnskj-->
+<script>
+    $(document).ready(function(){
+    $("a").click(function () { 
+        $(this).addClass("disabled"); 
+    });
+});
+</script>
 
-                </p>
-                </div>
-            </footer>
-      </body>
+</body>
+
 </html>

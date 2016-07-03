@@ -2,43 +2,45 @@
 {% block title %}home{% endblock %}
 
 {% block content %}
-<h3>CHOOSE ONE</h3>
-<!-- PICTURES ROW -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-1"></div>
-
-        <div class="col-md-5">
-            <div class="profile-pic-container">
-                <div class="grade-container">
-                    <span class="label grade-label grade-label-blue">{{ choices1.nlikes }}<small> likes</small></span>
-                </div>
-                <form method="POST" class="profile-pic-img profile-pic-img-blue">
-                    {% csrf_token %}
-                    <input type="hidden" name="winner" value="{{ choices1.id }}"></input>
-                    <input type="hidden" name="loser" value="{{ choices2.id }}"></input>
-                    <input type="image" action="submit" class="img-circle" src="{{ choices1.image.url }}">
-                    <figcaption class="figure-caption text-xs-right">by {% if choices1.Name %}{{ choices1.Name }}{% endif %}</figcaption>
-
-                </form>
+<section id="portfolio">
+     
+    <div class="container">
+<!--        <div style="background-color:red;" class="well well-sm">Basic Well</div>-->
+        <span style="color:black;font-size:20px;font-family: 'Montserrat', sans-serif; font-weight:bold; position:fixed; top:100px;left:3px;">TOP FIVE{% for t in topr %}<br><span style="font-size:15px; font-weight:normal;">&nbsp;#{{ forloop.counter }}&nbsp;
+            {{ t.Name }}/{{ t.nlikes }} likes</span>{% endfor %}</span>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <br>
+                <h2>ASCII presents</h2>
+                <hr class="star-primary">
+                <h2>FLASHPOINT</h2>
+                <br><br>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    
+                    <a href="{% url 'homepage:calc' id=choices1.id %}" class="portfolio-link" data-toggle="modal">
+                        <img src="{{ choices1.image.url }}" class="img-responsive" alt="" style="height: 400px;width: auto; margin:auto;">
 
-        <div class="col-md-5">
-            <div class="profile-pic-container">
-                <div class="grade-container">
-                    <span class="label grade-label grade-label-blue">{{ choices2.nlikes }}<small> likes</small></span>
+                    </a>
+                    <div style="text-align: center; font-size:40px;font-family: 'Montserrat', sans-serif; color: red;" >
+                        {{ choices1.nlikes }}
+                    <i class="fa fa-heart" style="color: black;" aria-hidden="true"></i>
+                    </div>
+                                </div>
+
+                <div class="col-lg-6" >
+                    <a href="{% url 'homepage:calc' id=choices2.id %}" class="portfolio-link" data-toggle="modal">
+                        <img src="{{ choices2.image.url }}" class="img-responsive" alt="" style=" height:400px;width: auto;margin:auto;">
+                    </a>
+          <div style="text-align: center; font-size:40px;font-family: 'Montserrat', sans-serif; color: red;" >{{ choices2.nlikes }}
+                    <i class="fa fa-heart" style="color: black;" aria-hidden="true"></i> &nbsp;
+              <span style="color:grey;font-size:15px;position:fixed; bottom:7px;right:3px;">SEND YOUR PICS HERE<br>+91-7022151336<br>-Developed by Gaurav,Chakru</span>
+                    </div>
                 </div>
-                <form method="POST" class="profile-pic-img profile-pic-img-blue">
-                    {% csrf_token %}
-                    <input type="hidden" name="winner" value="{{ choices2.id }}"></input>
-                    <input type="hidden" name="loser" value="{{ choices1.id }}"></input>
-                    <input type="image" action="submit" class="img-circle" src="{{ choices2.image.url }}">
-                    <figcaption class="figure-caption text-xs-right">by {% if choices2.Name %}{{ choices2.Name }}{% endif %}</figcaption>
-                </form>
             </div>
         </div>
-
     </div>
-</div>
 {% endblock %}
