@@ -16,7 +16,7 @@ Commands to run server
 ```
 $ virtualenv .
 $ pip install -r requirements.txt
-# This may take few minutes, go and get some food until then
+# This may take few minutes, go get some coffee until then
 
 $ python manage.py runserver
 ```
