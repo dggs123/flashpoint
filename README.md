@@ -4,8 +4,8 @@ Flashpoint is simple web app used to compare different pics and rate them accord
 # Setup and running
 Clone the repo and cd to the folder
 ```
-$ git clone https://github.com/AeonAxan/magnovite-2015
-$ cd magnovite-2015
+$ git clone https://github.com/dggs123/flashpoint
+$ cd flashpoint
 ```
 Install and setup pip and Virtualenv. This may take sometime depending on your internet speed.
 ```
